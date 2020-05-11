@@ -1,0 +1,21 @@
+{
+  "name": "proxy-app",
+  "version": "0.0.1",
+  "description": "The Hack Reactor Frontend Capstone. Amazon.com product page",
+  "author": "Paul Ferguson",
+  "license": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "server": "nodemon server"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
