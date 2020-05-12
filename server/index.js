@@ -60,7 +60,7 @@ ProxyApp.all('/rev-service/*', (req, resp) => {
   apiProxy.web(req, resp, {target: revService});
 });
 
-ProxyApp.all('/api/*', (req, resp) => {
+ProxyApp.all('/review-api/*', (req, resp) => {
   console.log('Proxy to Review server API');
   apiProxy.web(req, resp, {target: revService});
 });
