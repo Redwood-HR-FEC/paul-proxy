@@ -24,7 +24,7 @@ ProxyApp.use('/:id', express.static('public'));
 
 // Q and A Proxy
 
-ProxyApp.all('/qna-service/*', (req, resp) => {
+ProxyApp.all('/questions-service/*', (req, resp) => {
   console.log('Proxy to Q and A server');
   apiProxy.web(req, resp, {target: qnaService});
 });
@@ -37,7 +37,7 @@ ProxyApp.all('/questions/*', (req, resp) => {
 
 // Description Proxy
 
-ProxyApp.all('/dec-service/*', (req, resp) => {
+ProxyApp.all('/description-service/*', (req, resp) => {
   console.log('Proxy to Description server');
   apiProxy.web(req, resp, {target: decService});
 });
@@ -55,7 +55,7 @@ ProxyApp.all('/getsingleproduct/*', (req, resp) => {
 
 // Review Proxy
 
-ProxyApp.all('/rev-service/*', (req, resp) => {
+ProxyApp.all('/review-service/*', (req, resp) => {
   console.log('Proxy to Review server');
   apiProxy.web(req, resp, {target: revService});
 });
