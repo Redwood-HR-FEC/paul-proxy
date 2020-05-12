@@ -22,19 +22,46 @@ ProxyApp.use((req, resp, next) => {
 ProxyApp.use('/:id', express.static('public'));
 
 
-// Proxy Routes
+// Q and A Proxy
+
 ProxyApp.all('/qna-service/*', (req, resp) => {
-  console.log('Proxy to Review server');
+  console.log('Proxy to Q and A server');
   apiProxy.web(req, resp, {target: qnaService});
 });
 
+ProxyApp.all('/questions/*', (req, resp) => {
+  console.log('Proxy to Q and A server API');
+  apiProxy.web(req, resp, {target: qnaService});
+});
+
+
+// Description Proxy
+
 ProxyApp.all('/dec-service/*', (req, resp) => {
-  console.log('Proxy to Review server');
+  console.log('Proxy to Description server');
   apiProxy.web(req, resp, {target: decService});
 });
 
+ProxyApp.all('/getallproducts/*', (req, resp) => {
+  console.log('Proxy to Description server API');
+  apiProxy.web(req, resp, {target: decService});
+});
+
+ProxyApp.all('/getsingleproduct/*', (req, resp) => {
+  console.log('Proxy to Description server API');
+  apiProxy.web(req, resp, {target: decService});
+});
+
+
+// Review Proxy
+
 ProxyApp.all('/rev-service/*', (req, resp) => {
   console.log('Proxy to Review server');
+  apiProxy.web(req, resp, {target: revService});
+});
+
+ProxyApp.all('/api/*', (req, resp) => {
+  console.log('Proxy to Review server API');
   apiProxy.web(req, resp, {target: revService});
 });
 
