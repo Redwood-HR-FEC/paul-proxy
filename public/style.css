@@ -1,0 +1,43 @@
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.product-header {
+  display: flex;
+  align-items: start;
+}
+
+.product-header > img:first-of-type {
+  flex: 0 0 40%;
+}
+
+#root {
+  flex: 1;
+}
+
+#root > div > div > div {
+  width: 100%;
+}
+
+.product-header > img:last-of-type {
+  flex: 0 0 293px;
+}
+
+.review-section {
+  display: flex;
+  align-items: start;
+}
+
+
+#app {
+  margin: 20px;
+}
+
+
+#review-service {
+  flex: 1;
+  margin-top: 26px;
+  margin-right: 32px;
+}
