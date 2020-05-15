@@ -29,5 +29,5 @@ coverage
 # Config
 config/
 .env
-.env-prod
+.env.prod
 
