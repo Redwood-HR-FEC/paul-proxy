@@ -1,5 +1,5 @@
 {
-  "name": "proxy-app",
+  "name": "fec-proxy",
   "version": "0.0.1",
   "description": "The Hack Reactor Frontend Capstone. Amazon.com product page",
   "author": "Paul Ferguson",
@@ -8,6 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "node server",
     "server": "nodemon server"
   },
   "dependencies": {
