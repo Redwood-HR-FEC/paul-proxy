@@ -1,2 +1,8 @@
-User-agent: *
+
+#Hide from Google
+User-agent: Googlebot
 Disallow: /
+
+# Show everyone else (default so just showing off)
+User-agent: *
+Allow: /

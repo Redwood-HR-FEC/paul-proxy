@@ -19,6 +19,7 @@ ProxyApp.use((req, resp, next) => {
 });
 
 // Static
+ProxyApp.use('/robots.txt', express.static('public/robots.txt'));
 ProxyApp.use('/:id', express.static('public'));
 
 
