@@ -1,6 +1,7 @@
 
 const express = require('express');
 const httpProxy = require('http-proxy');
+require('dotenv').config();
 
 const ProxyApp = express();
 ProxyApp.set('port', 3000);
@@ -8,13 +9,13 @@ ProxyApp.set('port', 3000);
 const apiProxy = httpProxy.createProxyServer();
 
 // Local
-// const qnaService = 'http://localhost:3001';
-const decService = 'http://localhost:3002';
-// const revService = 'http://localhost:3003';
+let qnaService = '';
+let decService = '';
+let revService = '';
 
-// EC2
-const qnaService = 'http://54.218.33.175:3001';
-const revService = 'http://18.236.82.217:3003';
+if (process.env.SERVICE_1) qnaService = process.env.SERVICE_1;
+if (process.env.SERVICE_2) decService = process.env.SERVICE_2;
+if (process.env.SERVICE_3) revService = process.env.SERVICE_3;
 
 
 // The Middle
@@ -44,20 +45,20 @@ ProxyApp.all('/questions/*', (req, resp) => {
 
 // Description Proxy
 
-// ProxyApp.all('/description-service/*', (req, resp) => {
-//   console.log('Proxy to Description server');
-//   apiProxy.web(req, resp, {target: decService});
-// });
+ProxyApp.all('/description-service/*', (req, resp) => {
+  console.log('Proxy to Description server');
+  apiProxy.web(req, resp, {target: decService});
+});
 
-// ProxyApp.all('/getallproducts/*', (req, resp) => {
-//   console.log('Proxy to Description server API');
-//   apiProxy.web(req, resp, {target: decService});
-// });
+ProxyApp.all('/getallproducts/*', (req, resp) => {
+  console.log('Proxy to Description server API');
+  apiProxy.web(req, resp, {target: decService});
+});
 
-// ProxyApp.all('/getsingleproduct/*', (req, resp) => {
-//   console.log('Proxy to Description server API');
-//   apiProxy.web(req, resp, {target: decService});
-// });
+ProxyApp.all('/getsingleproduct/*', (req, resp) => {
+  console.log('Proxy to Description server API');
+  apiProxy.web(req, resp, {target: decService});
+});
 
 
 // Review Proxy
