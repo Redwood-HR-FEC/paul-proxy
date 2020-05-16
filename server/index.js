@@ -9,8 +9,8 @@ ProxyApp.set('port', 3000);
 const apiProxy = httpProxy.createProxyServer();
 
 // Local
-let qnaService = "http://54.184.20.122:3002";
-let decService = "http://34.212.75.246:3001";
+let qnaService = "http://54.184.20.122:3001";
+let decService = "http://34.212.75.246:3002";
 let revService = "http://44.228.132.116:3003";
 
 
